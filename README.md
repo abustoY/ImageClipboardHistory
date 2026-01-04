@@ -23,6 +23,16 @@
 3. `ImageClipboardHistory.app` を `/Applications` フォルダにドラッグ
 4. アプリを起動
 
+### ⚠️ 「マルウェアが含まれていないことを検証できません」と表示される場合
+
+このアプリは Apple の公証を受けていないため、macOSのセキュリティ機能（Gatekeeper）により初回起動時にブロックされる場合があります。
+
+#### 🔧 ターミナルで隔離属性を削除してください
+
+```bash
+xattr -d com.apple.quarantine /Applications/ImageClipboardHistory.app
+```
+
 ### ログイン項目の設定（PC起動時に自動起動させたい場合）
 1. システム設定 > 一般 > ログイン項目 を開く
 2. 「ログイン時に開く」の `+` ボタンを押し、`ImageClipboardHistory.app` を追加
