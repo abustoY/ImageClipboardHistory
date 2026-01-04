@@ -1,0 +1,24 @@
+# Xcode
+#
+# gitignore contributors: add more coverage actually testing with Xcode projects and packages
+
+## Build results
+build/
+DerivedData/
+
+## Usage Data
+*.xcworkspace/xcuserdata/
+*.xcuserdatad
+*.xcuserstate
+
+## Other Environment
+.DS_Store
+
+## Swift Package Manager
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/xcode/xcuserdata/
+
+## Root-level files (if any)
+*.swp
+*~
