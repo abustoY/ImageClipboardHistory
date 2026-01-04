@@ -13,22 +13,19 @@
 - **軽量動作**: Dockを汚さずメニューバーだけで常駐。
 
 ## 動作環境
-- macOS 13.0 以降 (MenuBarExtra を使用するため)
-- Xcode 14.0 以上 (ビルド用)
-## インストール方法 (Xcodeなしで使う)
-本アプリを通常のMacアプリとして常駐させる手順は以下の通りです。
+- macOS 13.0 以降
 
-1. **アーカイブの作成**:
-   - Xcodeメニューの `Product` > `Archive` を選択します。
-   - アーカイブが完了したら、オーガナイザ画が表示されます。
-   - `Distribute App` > `Custom` > `Copy App` を選択し、デスクトップなどに保存します。
+## インストール方法
 
-2. **アプリケーションフォルダへの移動**:
-   - 保存された `ImageClipboardHistory.app` を `/Applications` フォルダに移動します。
+### ダウンロード（推奨）
+1. [Releases](https://github.com/abustoY/ImageClipboardHistory/releases) から最新の `.zip` ファイルをダウンロード
+2. ZIPを解凍
+3. `ImageClipboardHistory.app` を `/Applications` フォルダにドラッグ
+4. アプリを起動
 
-3. **ログイン項目の設定** (PC起動時に自動起動させたい場合):
-   - システム設定 > 一般 > ログイン項目 を開きます。
-   - 「ログイン時に開く」の `+` ボタンを押し、アプリケーションフォルダ内の `ImageClipboardHistory.app` を追加します。
+### ログイン項目の設定（PC起動時に自動起動させたい場合）
+1. システム設定 > 一般 > ログイン項目 を開く
+2. 「ログイン時に開く」の `+` ボタンを押し、`ImageClipboardHistory.app` を追加
 
 ## 使い方
 1. アプリを起動します（初回は許可を求められる場合があります）。
@@ -37,11 +34,6 @@
     - **Enter (Return)**: ウィンドウが開いている時に最新の画像をコピーして閉じる。
 3. メニューバーのアイコン、またはショートカットから履歴を確認できます。
 
-## プロジェクト構造
-- `ImageClipboardHistoryApp.swift`: アプリのメインエントリポイント
-- `ContentView.swift`: サムネイル一覧を表示するUI部分
-- `ClipboardImageHistory.swift`: クリップボード監視ロジック
-
 ## ライセンス
 MIT License (または、お好きなライセンスをここに記載してください)
 
@@ -49,3 +41,40 @@ MIT License (または、お好きなライセンスをここに記載してく�
 もしこのアプリを気に入っていただけたら、サポートしていただけると今後の開発の励みになります！
 
 - [GitHub Sponsors](https://github.com/sponsors/abustoY)
+
+## 開発者向け
+
+### プロジェクト構造
+- `ImageClipboardHistoryApp.swift`: アプリのメインエントリポイント
+- `ContentView.swift`: サムネイル一覧を表示するUI部分
+- `ClipboardImageHistory.swift`: クリップボード監視ロジック
+
+### ソースからビルド
+Xcode 14.0以上が必要です。
+
+1. **プロジェクトを開く**
+   ```bash
+   open ImageClipboardHistory.xcodeproj
+   ```
+
+2. **ビルドターゲットを確認**
+   - Xcodeの左上でビルドターゲットを選択
+   - **ローカル動作確認**: 「My Mac」を選択
+   - **リリース用ビルド**: 「Any Mac」を選択
+
+#### ローカルで動作確認する場合
+3. `Cmd + R` または `Product` > `Run` で実行
+   - デバッグ用にそのまま起動される
+
+#### リリース用にビルドする場合
+3. **アーカイブ作成**
+   - メニュー: `Product` > `Archive`
+   - ビルドが完了するとOrganizerウィンドウが開く
+
+4. **アプリを書き出し**
+   - `Distribute App` をクリック
+   - `Custom` > `Copy App` を選択
+   - 保存先を選んで `Export`
+
+5. **インストール**
+   - 書き出された `ImageClipboardHistory.app` を `/Applications` フォルダに移動
