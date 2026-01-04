@@ -17,7 +17,7 @@ struct ContentView: View {
         VStack(spacing: 0) {
             // ヘッダー: アプリ名とゴミ箱ボタン（高さ最小限）
             HStack {
-                Text("Image History")
+                Text("ImageClipboardHistory")
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.secondary)
                     .padding(.leading, 8)

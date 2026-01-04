@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // メニューバーアイテムの設定
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "photo.on.rectangle", accessibilityDescription: "Image History")
+            button.image = NSImage(systemSymbolName: "photo.on.rectangle", accessibilityDescription: "ImageClipboardHistory")
             button.action = #selector(togglePopover)
             button.target = self
         }
